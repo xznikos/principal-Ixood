@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ixood - Cadastro</title>
+    {% load static %}
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #9c9c9c;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #c62828;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-box img {
+            height: 40px;
+            border-radius: 20px;
+            width: 70px;
+            height: 60px;
+        }
+
+        .logo-box h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px 40px;
+            box-sizing: border-box;
+        }
+
+        .cadastro-container {
+            background-color: #fff;
+            padding: 2.5rem 3rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #c62828;
+            font-weight: 700;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #c62828;
+        }
+
+        button {
+            background-color: #c62828;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        button:hover {
+            background-color: #b71c1c;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 0.8rem;
+            text-decoration: none;
+            color: #c62828;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #b71c1c;
+        }
+
+        .messages {
+            margin-top: 1rem;
+            color: #d32f2f;
+            font-weight: 600;
+        }
+
+        .back-home {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            background-color: #777;
+            padding: 10px 25px;
+            border-radius: 6px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-home:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #c62828;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-box">
+            <img src="{% static 'encomendas/imagens/ixood.png' %}" alt="Logo Ixood">
+            <h1>Ixood</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="cadastro-container">
+            <h2>Cadastro</h2>
+            <form method="post">
+                {% csrf_token %}
+                <label>Usuário:</label><br>
+                <input type="text" name="usuario" required><br>
+                <label>Senha:</label><br>
+                <input type="password" name="senha" required><br><br>
+                <button type="submit">Cadastrar</button>
+            </form>
+
+            <a href="{% url 'usuarios:login' %}">Já tem conta? Faça login</a>
+
+            <div class="messages">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+    <div style="text-align: center;">
+        <a href="{% url 'encomendas:home' %}" class="back-home">Voltar para Home</a>
+    </div>
+
+    <footer>
+        &copy; 2025 Ixood - Todos os direitos reservados.
+    </footer>
+</body>
+
+</html>
