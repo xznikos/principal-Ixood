@@ -16,6 +16,41 @@
             flex-direction: column;
         }
 
+        .tema-escuro {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .tema-escuro header {
+            background-color: #0d47a1;
+        }
+
+        .tema-escuro a,
+        .tema-escuro .login-header-btn {
+            background-color: #1976d2;
+            color: white;
+        }
+
+        .tema-escuro table {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        .tema-escuro th {
+            background-color: #1565c0;
+            color: white;
+        }
+
+        .tema-escuro tr:hover {
+            background-color: #2a2a2a;
+            color: white;
+        }
+
+        .tema-escuro footer {
+            background-color: #0d47a1;
+        }
+
+
         header {
             position: relative;
             background-color: #c62828;
@@ -62,11 +97,12 @@
         }
 
         .login-header-btn:hover {
-            background-color: #f3b7b7;
+            background-color: #a7aceb;
         }
 
         main {
-            flex: 1; /* para ocupar o espaço entre header e footer */
+            flex: 1;
+            /* para ocupar o espaço entre header e footer */
         }
 
         section {
@@ -188,8 +224,48 @@
                 white-space: nowrap;
             }
         }
+
+        .tema-escuro section h2,
+        .tema-escuro section p {
+            color: #ffffff;
+        }
+
+        .botoes-header {
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .botoes-header .login-header-btn {
+            position: static;
+            margin: 0;
+        }
+
+        
     </style>
 </head>
+
+<script>
+    function alternarTema() {
+        const body = document.body;
+        body.classList.toggle('tema-escuro');
+
+        // Salva no localStorage (opcional, para lembrar o tema)
+        if (body.classList.contains('tema-escuro')) {
+            localStorage.setItem('tema', 'escuro');
+        } else {
+            localStorage.setItem('tema', 'claro');
+        }
+    }
+
+    // Aplica o tema salvo ao carregar a página
+    window.onload = () => {
+        if (localStorage.getItem('tema') === 'escuro') {
+            document.body.classList.add('tema-escuro');
+        }
+    };
+</script>
+
 
 <body>
     <header>
@@ -197,7 +273,12 @@
             <img src="{% static 'encomendas/imagens/ixood.png' %}" alt="Logo Ixood" />
             <h1>Ixood</h1>
         </div>
-        <a class="login-header-btn" href="{% url 'usuarios:login' %}">Login</a>
+
+        <div class="botoes-header">
+            <a class="login-header-btn" href="{% url 'usuarios:login' %}">Login</a>
+            <button onclick="alternarTema()" class="login-header-btn">Modo escuro 🌓</button>
+        </div>
+
     </header>
 
     <main>
@@ -209,7 +290,8 @@
                 Explore nossas opções e monte sua lista de desejos com os melhores produtos gastronômicos!
             </p>
             <div class="imagem-container">
-                <img src="{% static 'encomendas/imagens/culinaria-mineira-cpt.jpg' %}" alt="Comida deliciosa da padaria Ixood" />
+                <img src="{% static 'encomendas/imagens/culinaria-mineira-cpt.jpg' %}"
+                    alt="Comida deliciosa da padaria Ixood" />
             </div>
         </section>
 

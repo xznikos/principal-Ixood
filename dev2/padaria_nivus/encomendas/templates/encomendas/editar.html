@@ -18,7 +18,29 @@
             padding: 1rem 2rem;
             font-size: 1.6rem;
             font-weight: 700;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tema-box {
+            display: flex;
+            align-items: center;
+        }
+
+        #btn-tema {
+            background-color: white;
+            color: black;
+            font-weight: 700;
+            padding: 10px 18px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #btn-tema:hover {
+            background-color: #a7aceb;
         }
 
         .container {
@@ -80,7 +102,7 @@
             color: white;
             font-weight: 700;
             border: none;
-            padding: 14px 0;
+            padding: 20px;
             border-radius: 8px;
             font-size: 1.1rem;
             cursor: pointer;
@@ -105,10 +127,62 @@
             color: #a61d1d;
             text-decoration: underline;
         }
+
+        /* Tema escuro */
+        .tema-escuro {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .tema-escuro header {
+            background-color: #0d47a1;
+        }
+
+        .tema-escuro .container {
+            background-color: #1e1e1e;
+        }
+
+        .tema-escuro h1 {
+            color: #90caf9;
+        }
+
+        .tema-escuro form label {
+            color: #e0e0e0;
+        }
+
+        .tema-escuro input[type="text"],
+        .tema-escuro input[type="number"],
+        .tema-escuro input[type="file"] {
+            background-color: #2b2b2b;
+            color: #ffffff;
+            border: 1px solid #666;
+        }
+
+        .tema-escuro input[type="submit"] {
+            background-color: #1976d2;
+        }
+
+        .tema-escuro input[type="submit"]:hover {
+            background-color: #1565c0;
+        }
+
+        .tema-escuro .btn-back {
+            color: #90caf9;
+        }
+
+        .tema-escuro .btn-back:hover {
+            color: #64b5f6;
+        }
     </style>
 </head>
 <body>
-    <header>Ixood - Editar Encomenda</header>
+    <header>
+        <span>Ixood - Editar Encomenda</span>
+        <div class="tema-box">
+            <button id="btn-tema" onclick="alternarTema()">Alternar Tema</button>
+        </div>
+    </header>
+
     <div class="container">
         <h1>Edite seus produtos aqui!</h1>
 
@@ -124,5 +198,18 @@
 
         <a href="{% url 'encomendas:home' %}" class="btn-back">Voltar para Home</a>
     </div>
+
+    <script>
+        function alternarTema() {
+            document.body.classList.toggle("tema-escuro");
+            localStorage.setItem("tema", document.body.classList.contains("tema-escuro") ? "escuro" : "claro");
+        }
+
+        window.onload = () => {
+            if (localStorage.getItem("tema") === "escuro") {
+                document.body.classList.add("tema-escuro");
+            }
+        };
+    </script>
 </body>
 </html>

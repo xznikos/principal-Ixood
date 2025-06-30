@@ -18,7 +18,7 @@
 
         header {
             background-color: #c62828;
-            color: rgb(255, 255, 255);
+            color: white;
             padding: 1rem 2rem;
             display: flex;
             align-items: center;
@@ -33,17 +33,35 @@
         }
 
         .logo-box img {
-            height: 40px;
-            border-radius: 20px;
             width: 70px;
             height: 60px;
+            border-radius: 20px;
         }
-
 
         .logo-box h1 {
             margin: 0;
             font-size: 1.8rem;
             font-weight: 700;
+        }
+
+        .tema-box {
+            display: flex;
+            align-items: center;
+        }
+
+        #btn-tema {
+            background-color: #ffffff;
+            color: #000000;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #btn-tema:hover {
+            background-color: #a7aceb;
         }
 
         main {
@@ -146,6 +164,54 @@
             font-size: 0.9rem;
             user-select: none;
         }
+
+        /* Tema escuro */
+        .tema-escuro {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .tema-escuro header,
+        .tema-escuro footer {
+            background-color: #0d47a1;
+        }
+
+        .tema-escuro .container {
+            background-color: #1e1e1e;
+            border-color: #444;
+        }
+
+        .tema-escuro h2 {
+            color: #90caf9;
+        }
+
+        .tema-escuro label {
+            color: #e0e0e0;
+        }
+
+        .tema-escuro input[type="text"],
+        .tema-escuro input[type="number"],
+        .tema-escuro input[type="file"] {
+            background-color: #2b2b2b;
+            color: #ffffff;
+            border: 1px solid #666;
+        }
+
+        .tema-escuro button {
+            background-color: #1976d2;
+        }
+
+        .tema-escuro button:hover {
+            background-color: #1565c0;
+        }
+
+        .tema-escuro .back-home {
+            background-color: #424242;
+        }
+
+        .tema-escuro .back-home:hover {
+            background-color: #616161;
+        }
     </style>
 </head>
 
@@ -154,6 +220,9 @@
         <div class="logo-box">
             <img src="{% static 'encomendas/imagens/ixood.png' %}" alt="Logo Ixood">
             <h1>Ixood</h1>
+        </div>
+        <div class="tema-box">
+            <button id="btn-tema" onclick="alternarTema()">Alternar Tema</button>
         </div>
     </header>
 
@@ -187,6 +256,19 @@
     <footer>
         &copy; 2025 Ixood - Todos os direitos reservados.
     </footer>
+
+    <script>
+        function alternarTema() {
+            document.body.classList.toggle("tema-escuro");
+            localStorage.setItem("tema", document.body.classList.contains("tema-escuro") ? "escuro" : "claro");
+        }
+
+        window.onload = () => {
+            if (localStorage.getItem("tema") === "escuro") {
+                document.body.classList.add("tema-escuro");
+            }
+        };
+    </script>
 </body>
 
 </html>
