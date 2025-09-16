@@ -49,5 +49,103 @@ O **Padaria Nivus** é um sistema **Web**, desenvolvido com o framework **Django
    python manage.py runserver
 
 6. Acesse o navegador
-7. ```bash  
+    ```bash  
    http://127.0.0.1:8000
+
+## 🌐 Desenvolvimento Web
+
+### O que é?
+Desenvolvimento de aplicações acessíveis via navegadores (sites, sistemas online, portais).
+
+### Linguagens e frameworks principais:
+- **HTML, CSS, JavaScript**
+- **Frameworks:** React, Angular, Vue.js
+- **Backend:** Django, Flask, Node.js
+
+### Ferramentas comuns:
+VS Code, navegadores, Postman.
+
+### Exemplos de projetos:
+Google, Facebook, sistemas de e-commerce.
+
+### Vantagens:
+Acessibilidade, multiplataforma, fácil atualização.
+
+### Limitações:
+Depende de internet, problemas de compatibilidade entre navegadores.
+
+---
+
+## 💻 Desenvolvimento Desktop
+
+### O que é?
+Criação de softwares que rodam diretamente em computadores pessoais (Windows, Linux, macOS).
+
+### Linguagens comuns:
+C#, Java, Python, C++.
+
+### IDEs usadas:
+Visual Studio, Eclipse, PyCharm.
+
+### Exemplos:
+Microsoft Office, Adobe Photoshop.
+
+### Vantagens:
+Maior desempenho, acesso offline, integração direta com hardware.
+
+### Limitações:
+Dependência de sistema operacional, atualizações mais complexas.
+
+---
+
+## 📱 Desenvolvimento Mobile
+
+### O que é?
+Desenvolvimento de aplicativos para smartphones e tablets.
+
+### Tipos de apps:
+- **Nativos:** feitos para Android (Java/Kotlin) ou iOS (Swift).
+- **Híbridos:** um único código para várias plataformas (ex: Ionic, Cordova).
+- **PWAs:** aplicativos progressivos que rodam no navegador como apps.
+
+### Ferramentas/Frameworks:
+Flutter, React Native, Android Studio, Xcode.
+
+### Exemplos práticos:
+WhatsApp, Instagram, Uber.
+
+### Vantagens:
+Grande engajamento, uso de recursos do dispositivo (GPS, câmera).
+
+### Limitações:
+Dependência das lojas de aplicativos, fragmentação de dispositivos.
+
+---
+
+## 📊 Comparação entre Web, Desktop e Mobile
+
+| Aspecto | Web 🌐 | Desktop 💻 | Mobile 📱 |
+| :--- | :--- | :--- | :--- |
+| **Plataforma** | Navegadores | Computadores | Smartphones/Tablets |
+| **Acesso** | Online | Offline | Online/Offline |
+| **Atualizações** | Imediatas no servidor | Precisa reinstalar | Via lojas de apps |
+| **Exemplos** | E-commerce | Photoshop | WhatsApp |
+| **Linguagens comuns**| HTML, CSS, JS, Python | C#, Java, Python | Kotlin, Swift, Dart |
+| **Vantagens** | Acessibilidade | Desempenho | Engajamento |
+| **Limitações** | Internet | Plataforma | Restrições da loja |
+
+---
+
+## ✅ Conclusão
+
+Durante a criação deste README, foi possível compreender melhor as diferenças e aplicações entre os tipos de desenvolvimento: Web, Desktop e Mobile. O projeto Padaria Nivus exemplifica o desenvolvimento Web, mostrando como frameworks como o Django podem ser usados para criar sistemas práticos de gestão e manutenção.
+
+Esse entendimento ajuda na escolha da tecnologia ideal para cada situação e amplia a visão sobre manutenção, atualização e usabilidade de softwares.
+
+---
+
+## 👥 Membros do grupo
+- Nome 1
+- Nome 2
+- Nome 3
+- Nome 4
