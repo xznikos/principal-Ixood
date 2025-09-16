@@ -138,14 +138,11 @@ Dependência das lojas de aplicativos, fragmentação de dispositivos.
 
 ## ✅ Conclusão
 
-Durante a criação deste README, foi possível compreender melhor as diferenças e aplicações entre os tipos de desenvolvimento: Web, Desktop e Mobile. O projeto Padaria Nivus exemplifica o desenvolvimento Web, mostrando como frameworks como o Django podem ser usados para criar sistemas práticos de gestão e manutenção.
+Durante a criação deste README, foi possível entender as diferenças e aplicações entre os tipos de desenvolvimento: Web, Desktop e Mobile. O projeto Padaria Nivus exemplifica o desenvolvimento Web, mostrando como frameworks como o Django podem ser usados para criar sistemas práticos de gestão e manutenção.
 
 Esse entendimento ajuda na escolha da tecnologia ideal para cada situação e amplia a visão sobre manutenção, atualização e usabilidade de softwares.
 
 ---
 
 ## 👥 Membros do grupo
-- Nome 1
-- Nome 2
-- Nome 3
-- Nome 4
+- Níkolas
