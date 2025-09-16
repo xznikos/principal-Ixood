@@ -1,124 +1,33 @@
 # Desenvolvimento de Sistemas: Web, Desktop e Mobile
 
-## 📖 Introdução
-Este documento foi criado como parte da atividade **"Criando README – Web, Desktop e Mobile"**.  
-Seu objetivo é apresentar as diferenças entre os principais tipos de desenvolvimento de software (**Web, Desktop e Mobile**), destacando suas características, ferramentas, vantagens e limitações.  
+## 📌 Introdução
+Este documento tem como objetivo apresentar uma visão geral dos três principais tipos de desenvolvimento de software: **Web, Desktop e Mobile**.  
+Ele também descreve o projeto **Padaria Nivus**, um sistema desenvolvido em Django para gerenciar encomendas de produtos de padaria.  
 
-Além disso, o README descreve um **projeto Django (Web)** desenvolvido pelo grupo, explicando como executá-lo e quais funcionalidades ele oferece.  
-Compreender esses ambientes é fundamental para **manutenção e atualização** de sistemas, já que cada tipo de software tem necessidades distintas.
-
----
-
-## 🌐 Desenvolvimento Web
-### O que é?
-O **desenvolvimento web** consiste na criação de sites e aplicações acessadas por navegadores, podendo rodar em qualquer dispositivo conectado à internet.
-
-### Linguagens e Frameworks
-- **Linguagens:** HTML, CSS, JavaScript, Python, PHP  
-- **Frameworks:** Django, React, Angular, Vue.js  
-
-### Ferramentas Usadas
-- **Visual Studio Code**  
-- **Navegadores** (Google Chrome, Firefox, Edge)  
-- **Git/GitHub** para versionamento  
-
-### Exemplos
-- **E-commerces** (Amazon, Mercado Livre)  
-- **Redes sociais** (Instagram Web, Facebook)  
-- **Sistemas desenvolvidos em Django**  
-
-### Vantagens
-- Acessível em qualquer navegador  
-- Atualizações centralizadas no servidor  
-- Fácil distribuição  
-
-### Limitações
-- Depende de internet  
-- Diferenças de compatibilidade entre navegadores  
-- Performance inferior a apps nativos  
+Compreender as diferenças entre Web, Desktop e Mobile é essencial para escolher a tecnologia certa em cada contexto, garantindo melhor manutenção, desempenho e experiência do usuário.
 
 ---
 
-## 💻 Desenvolvimento Desktop
-### O que é?
-O desenvolvimento Desktop refere-se a aplicativos instalados no computador, funcionando mesmo sem internet.
+## 🍞 Projeto: Padaria Nivus
 
-### Linguagens Comuns
-- C#, Java, Python, C++  
-
-### IDEs
-- Visual Studio, Eclipse, PyCharm  
-
-### Exemplos
-- **Microsoft Office**  
-- **Adobe Photoshop**  
-- **VLC Media Player**  
-
-### Vantagens
-- Melhor desempenho  
-- Funciona offline  
-- Maior controle de recursos do sistema  
-
-### Limitações
-- Dependência do sistema operacional  
-- Atualizações menos práticas  
-- Menor portabilidade  
-
----
-
-## 📱 Desenvolvimento Mobile
-### O que é?
-É o desenvolvimento de aplicativos para smartphones e tablets, essenciais no cenário atual de mobilidade.
-
-### Tipos de Aplicativos
-- **Nativos** → desenvolvidos especificamente para iOS ou Android.  
-- **Híbridos** → um único código para múltiplas plataformas.  
-- **PWAs** → apps baseados na web que se comportam como aplicativos.  
-
-### Frameworks e Ferramentas
-- **Android Studio, Xcode**  
-- **React Native, Flutter, Ionic**  
-
-### Exemplos
-- **WhatsApp, TikTok, Uber**  
-
-### Vantagens
-- Grande alcance de usuários  
-- Acesso aos recursos do dispositivo (GPS, câmera, notificações)  
-- Melhor engajamento  
-
-### Limitações
-- Restrições das lojas de aplicativos  
-- Fragmentação de dispositivos  
-- Atualizações constantes necessárias  
-
----
-
-## 🔍 Comparação Web, Desktop e Mobile
-
-| Característica       | Web 🌐                         | Desktop 💻                  | Mobile 📱                        |
-|----------------------|--------------------------------|-----------------------------|----------------------------------|
-| **Acesso**           | Navegador + internet           | Instalado no PC             | Instalado via app store          |
-| **Atualizações**     | No servidor (automáticas)      | Requer reinstalação         | Feitas pelas lojas/app stores    |
-| **Portabilidade**    | Alta (qualquer navegador)      | Baixa (depende do SO)       | Alta (iOS e Android)             |
-| **Exemplos**         | Amazon, Instagram Web          | Photoshop, Office           | WhatsApp, Uber                   |
-| **Vantagem Principal** | Fácil acesso                  | Desempenho e offline        | Mobilidade e engajamento         |
-| **Limitação**        | Depende da internet/navegador  | Pouca portabilidade         | Fragmentação e restrições        |
-
----
-
-## 📂 Projeto Django – Padaria Nivus
-### 📌 Descrição
-O projeto **Padaria Nivus** é uma aplicação **Web** desenvolvida em **Django** para gerenciar **encomendas** de produtos de padaria.  
+### 📝 Descrição
+O **Padaria Nivus** é um sistema **Web**, desenvolvido com o framework **Django**, que permite gerenciar **encomendas de produtos de padaria**.  
+Seu objetivo é facilitar o registro, organização e controle de pedidos, oferecendo praticidade tanto para o administrador quanto para os clientes.
 
 ### ⚙️ Funcionalidades
-- Cadastro de encomendas  
-- Listagem e gerenciamento  
-- Banco de dados SQLite embutido  
+- Cadastro e listagem de encomendas  
+- Gerenciamento de produtos (ex: lasanha, pão de queijo, doces)  
+- Área administrativa integrada com o Django Admin  
+- Armazenamento de dados em banco de dados **SQLite**  
 
-### 🚀 Como Executar
-1. Clonar o repositório ou extrair os arquivos.  
-2. Entrar na pasta `dev2/padaria_nivus`.  
-3. Instalar as dependências:  
+### 📂 Estrutura principal do projeto
+- `dev2/padaria_nivus/` → Código principal do sistema Django  
+- `encomendas/` → Aplicação responsável pelo controle de pedidos  
+- `db.sqlite3` → Banco de dados local  
+- `static/` e `media/` → Arquivos estáticos e imagens dos produtos  
+
+### 🚀 Como executar o projeto
+1. Clone o repositório no GitHub  
    ```bash
-   pip install django
+   git clone <url-do-seu-repositorio>
+   cd padaria_nivus
