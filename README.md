@@ -37,6 +37,17 @@ O **Padaria Nivus** é um sistema **Web**, desenvolvido com o framework **Django
    venv\Scripts\activate     # Windows
 
 3. Instale as dependências
-     ```bash
-     pip install -r requirement.txt
+   ```bash
+   pip install -r requirement.txt
 
+4. Execute as migrações
+   ```bash
+   python manage.py migrate
+
+5. Inicie o servidor
+   ```bash
+   python manage.py runserver
+
+6. Acesse o navegador
+7. ```bash  
+   http://127.0.0.1:8000
