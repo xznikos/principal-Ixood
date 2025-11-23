@@ -19,7 +19,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '.onrender.com',  # Domínio do Render
-    '.seusite.com',   # Seu domínio customizado
+    'principal-ixood.onrender.com',  # Seu domínio específico no Render
 ]
 
 # Application definition
@@ -95,10 +95,23 @@ TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
 USE_TZ = True
 
-# Static files
+# Static files - CONFIGURAÇÃO CORRIGIDA
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Verifica se a pasta static existe antes de adicionar aos DIRS
+static_dirs = []
+if os.path.exists(os.path.join(BASE_DIR, 'static')):
+    static_dirs.append(os.path.join(BASE_DIR, 'static'))
+
+# Adiciona static dos apps se existirem
+for app in ['encomendas', 'usuarios']:
+    app_static_path = os.path.join(BASE_DIR, app, 'static')
+    if os.path.exists(app_static_path):
+        static_dirs.append(app_static_path)
+
+STATICFILES_DIRS = static_dirs
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files
@@ -114,3 +127,31 @@ if not DEBUG:
     CSRF_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_HSTS_SECONDS = 31536000  # 1 year
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    
+    # Para proxies/load balancers
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Configurações de logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}
