@@ -10,7 +10,7 @@ Compreender as diferenças entre Web, Desktop e Mobile é essencial para escolhe
 ## 🍞 Projeto: Padaria Nivus
 
 ### 📝 Descrição
-O **Padaria Nivus** é um sistema **Web**, desenvolvido com o framework **Django**, que permite gerenciar **encomendas de produtos de padaria**. Seu objetivo é facilitar o registro, organização e controle de pedidos, oferecendo praticidade tanto para o administrador quanto para os clientes.
+O **Ixood** é um sistema **Web**, desenvolvido com o framework **Django**, que permite gerenciar **encomendas de produtos**. Seu objetivo é facilitar o registro, organização e controle de pedidos, oferecendo praticidade tanto para o administrador quanto para os clientes.
 
 ### ⚙️ Funcionalidades
 - Cadastro e listagem de encomendas
